@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Card Data Extractor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col">
+
+    <header class="page-header flex-shrink-0">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="title-glow">Pokémon Card Data Extractor</h1>
+            <p class="text-gray-400 mt-2 text-center text-lg">Upload your <code>.json</code> files from Pokécardmaker.net to extract and view card details.</p>
+            
+            <section class="my-6">
+                <label for="jsonFiles" class="block mb-2 text-sm font-medium text-gray-300">Upload JSON File(s):</label>
+                <input type="file" id="jsonFiles" accept=".json" multiple
+                       class="block w-full text-sm text-gray-300 border border-gray-600 rounded-lg cursor-pointer bg-gray-700 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 p-2.5 file-input-custom">
+                <button id="processButton" class="hell-button mt-4 mx-auto">
+                    Extract Data
+                </button>
+            </section>
+        </div>
+    </header>
+
+    <main class="page-main flex-grow overflow-hidden">
+        <div class="container mx-auto px-4 h-full flex flex-col">
+            <section id="resultsSection" class="flex-grow flex flex-col min-h-0">
+                <h2 class="text-2xl font-semibold text-gray-200 mb-4">Extracted Card Data</h2>
+                <div id="messageArea" class="mb-4"></div>
+                <div class="table-container flex-grow overflow-auto rounded-lg shadow-md">
+                    <table id="resultsTable" class="min-w-full">
+                        <thead class="sticky top-0">
+                            </thead>
+                        <tbody class="divide-y">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="page-footer flex-shrink-0">
+        <div class="container mx-auto px-4 py-6">
+            <div id="actionsBar" class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-6">
+                <button id="downloadJsonButton" class="hell-button" disabled>
+                    Download All as JSON
+                </button>
+                <button id="copyJsonButton" class="hell-button" disabled>
+                    Copy All to Clipboard
+                </button>
+            </div>
+            <p class="text-center text-sm text-gray-500">&copy; 2025 Pokémon Card Extractor. For use with Pokécardmaker.net JSON exports.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
